@@ -6,7 +6,8 @@ const handleSubmit=e=>{
 }
 const [message,setMessage]=useState(null)
 const [form, setForm]=useState(null)
-    
+const [name,setNorm]=useState(null)
+
 
 useEffect(() => {
 
@@ -16,7 +17,7 @@ useEffect(() => {
       async function formSubmit(e) {
         e.preventDefault();
           
-        console.log("form submitted");
+        alert("form submitted");
     
         // const comment= {
         //   title:title,
@@ -59,23 +60,25 @@ useEffect(() => {
             name="message"
             //required
             type="text"
-            value={form.message}
+            value={message}
+            onChange={updateForm}
+          />
+          <label>Name here</label>
+          <input
+            name="name"
+            //required
+            type="text"
+            value={name}
             onChange={updateForm}
           />
             <h2></h2>
-             
+             <button type="submit">Submit</button>
+
         </form>
       )
 
     }
 
     export default AddMessage
-
-    
-
-
-
-
-
     
     
